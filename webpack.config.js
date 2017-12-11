@@ -14,14 +14,17 @@ module.exports = {
     filename: 'index_bundle.js',
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
+  plugins: [HtmlWebpackPluginConfig],
   devServer: {
     historyApiFallback: true
-  },
-  plugins: [HtmlWebpackPluginConfig]
+  }
 }

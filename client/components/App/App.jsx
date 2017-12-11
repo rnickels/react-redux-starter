@@ -1,19 +1,10 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom'
+import { Home } from '../Home'
+import { Login } from '../Login'
+import { Registration } from '../Registration'
 
-const Hello = () => (
-  <div>Hello!</div>
-)
-
-const World = () => (
-  <div>World!</div>
-)
-
-const Home = () => (
-  <div>Home!</div>
-)
-
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -22,10 +13,12 @@ export default class App extends React.Component {
         </div>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/hello' component={Hello} />
-          <Route exact path='/world' component={World} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Registration} />
         </Switch>
       </div>
     )
   }
 }
+
+export { App }
