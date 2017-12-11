@@ -1,5 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import App from './components/App.jsx'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const history = createBrowserHistory()
+
+ReactDOM.render(
+  <BrowserRouter history={history}>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+);
